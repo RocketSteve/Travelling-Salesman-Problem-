@@ -22,6 +22,13 @@ FetchContent_Declare(
 
 FetchContent_MakeAvailable(Catch2)
 
+set(EXTERNAL_LIB_HEADERS lib/websocketpp)
+
+target_include_directories(
+        main PRIVATE
+        ${EXTERNAL_LIB_HEADERS}
+)
+
 enable_testing()
 
 function(add_test_and_executable src name)
